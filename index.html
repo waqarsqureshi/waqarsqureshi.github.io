@@ -3,38 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Waqar Shahid Qureshi</title>
-  <meta name="description" content="Researcher in AI, Computer Vision, Robotics & Infrastructure. Lecturer at University of Galway." />
+  <title>Dr. Waqar Shahid Qureshi | AI, Computer Vision, Robotics | University of Galway</title>
+  <meta name="description" content="Dr. Waqar Shahid Qureshi is an Assistant Professor at University of Galway working on AI, computer vision, robotics, and intelligent infrastructure sensing." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://waqarsqureshi.github.io/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dr. Waqar Shahid Qureshi" />
-  <meta property="og:description" content="Applied AI researcher in robotics, computer vision, and intelligent sensing." />
+  <meta property="og:title" content="Dr. Waqar Shahid Qureshi | AI, Computer Vision, Robotics" />
+  <meta property="og:description" content="Assistant Professor at University of Galway focused on AI, computer vision, robotics, and intelligent sensing." />
   <meta property="og:url" content="https://waqarsqureshi.github.io/" />
+  <meta property="og:site_name" content="Dr. Waqar Shahid Qureshi" />
   <meta property="og:image" content="https://waqarsqureshi.github.io/IMAGE%201.jpeg" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="768" />
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dr. Waqar Shahid Qureshi" />
-  <meta name="twitter:description" content="Applied AI researcher in robotics, computer vision, and intelligent sensing." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Waqar Shahid Qureshi | AI, Computer Vision, Robotics" />
+  <meta name="twitter:description" content="Assistant Professor at University of Galway focused on AI, computer vision, robotics, and intelligent sensing." />
   <meta name="twitter:image" content="https://waqarsqureshi.github.io/IMAGE%201.jpeg" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dr. Waqar Shahid Qureshi",
-    "url": "https://waqarsqureshi.github.io/",
-    "jobTitle": "Assistant Professor",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "University of Galway"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/waqar-s-qureshi/",
-      "https://scholar.google.com/citations?user=61-FEAwAAAAJ&hl=en",
-      "https://research.universityofgalway.ie/en/persons/waqar-shahid-qureshi/",
-      "https://orcid.org/0000-0003-0176-8145"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://waqarsqureshi.github.io/#profilepage",
+        "url": "https://waqarsqureshi.github.io/",
+        "name": "Dr. Waqar Shahid Qureshi",
+        "description": "Assistant Professor at University of Galway working on AI, computer vision, robotics, and intelligent sensing.",
+        "mainEntity": {
+          "@id": "https://waqarsqureshi.github.io/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://waqarsqureshi.github.io/#person",
+        "name": "Dr. Waqar Shahid Qureshi",
+        "url": "https://waqarsqureshi.github.io/",
+        "jobTitle": "Assistant Professor",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "University of Galway"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/waqar-s-qureshi/",
+          "https://scholar.google.com/citations?user=61-FEAwAAAAJ&hl=en",
+          "https://research.universityofgalway.ie/en/persons/waqar-shahid-qureshi/",
+          "https://orcid.org/0000-0003-0176-8145"
+        ]
+      }
     ]
   }
   </script>
@@ -281,6 +299,52 @@
       line-height: 1.35;
     }
 
+    /* ── OPENINGS ── */
+    .openings {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .openings p {
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .openings ul {
+      margin: 0 0 12px 18px;
+      padding: 0;
+    }
+
+    .openings li {
+      font-size: 0.79rem;
+      color: var(--slate);
+      margin: 4px 0;
+    }
+
+    .openings-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--deep);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 7px;
+      letter-spacing: 0.2px;
+    }
+
+    .openings-cta:hover {
+      background: var(--maroon);
+    }
+
     /* ── LINKS ── */
     .links {
       margin-top: 20px;
@@ -391,6 +455,7 @@
       .hl-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .hl-num { font-size: 1.35rem; }
       .connect-grid { justify-content: center; }
+      .openings-cta { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -486,6 +551,18 @@
         <div class="hl-text">i10-index</div>
       </div>
     </div>
+  </div>
+
+  <!-- OPENINGS -->
+  <div class="openings">
+    <div class="section-label">Current Openings</div>
+    <p>I welcome inquiries from motivated students and collaborators in applied AI and intelligent sensing systems.</p>
+    <ul>
+      <li>Prospective PhD candidates in computer vision and robotics</li>
+      <li>Research and industry collaboration in infrastructure AI</li>
+      <li>Joint projects in multimodal sensing and edge AI deployment</li>
+    </ul>
+    <a class="openings-cta" href="mailto:waqarshahid.qureshi@universityofgalway.ie?subject=PhD%20or%20Research%20Collaboration%20Inquiry">Contact for PhD / Collaboration</a>
   </div>
 
   <!-- PROFILE LINKS -->
