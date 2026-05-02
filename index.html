@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Waqar Shahid Qureshi — TRA 2026</title>
+  <meta name="description" content="Researcher in AI, Computer Vision, Robotics & Infrastructure. Lecturer at University of Galway." />
+
+  <!-- QR code library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --navy:   #0f2240;
+      --blue:   #2563eb;
+      --sky:    #eff6ff;
+      --slate:  #475569;
+      --border: #e2e8f0;
+      --white:  #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+    }
+
+    /* ── TOP ACCENT BAR ── */
+    .accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, #1e3a5f 0%, #2563eb 60%, #60a5fa 100%);
+    }
+
+    /* ── CONFERENCE BADGE ── */
+    .conf-badge {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+
+    /* ── HERO CARD ── */
+    .hero {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .hero-photo {
+      width: 100px;
+      height: 126px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .hero-name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .hero-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .hero-tagline {
+      font-size: 0.78rem;
+      color: var(--slate);
+      line-height: 1.5;
+      border-left: 3px solid var(--blue);
+      padding-left: 9px;
+      margin-bottom: 12px;
+    }
+
+    .hero-meta {
+      font-size: 0.76rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    .hero-meta a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    /* ── CONNECT SECTION ── */
+    .connect {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      color: var(--slate);
+      margin-bottom: 14px;
+      border-left: 3px solid var(--blue);
+      padding-left: 8px;
+    }
+
+    .connect-grid {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #0077b5;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 13px 22px;
+      border-radius: 8px;
+      transition: background 0.18s;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .btn-linkedin:hover { background: #005885; }
+
+    .btn-linkedin svg { flex-shrink: 0; }
+
+    .qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    #qr-canvas {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: block;
+    }
+
+    .qr-label {
+      font-size: 0.68rem;
+      color: var(--slate);
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    /* ── RESEARCH ── */
+    .research {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      background: var(--sky);
+      border: 1px solid #bfdbfe;
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 500;
+      padding: 4px 11px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: center;
+    }
+
+    .hl-num {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hl-text {
+      font-size: 0.72rem;
+      color: var(--slate);
+      line-height: 1.35;
+    }
+
+    /* ── LINKS ── */
+    .links {
+      margin-top: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      box-shadow: 0 2px 12px rgba(15,34,64,.08);
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 0.82rem;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .link-row:hover {
+      border-color: var(--blue);
+      background: var(--sky);
+    }
+
+    .link-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .link-text { flex: 1; }
+    .link-title { font-weight: 600; color: var(--navy); display: block; }
+    .link-sub   { font-size: 0.71rem; color: var(--slate); display: block; }
+
+    .link-arrow { color: var(--slate); font-size: 0.85rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--slate);
+      margin-top: 28px;
+      line-height: 1.6;
+    }
+
+    footer a { color: var(--blue); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 460px) {
+      .hero { flex-direction: column; align-items: center; text-align: center; }
+      .hero-tagline { text-align: left; }
+      .hl-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .hl-num { font-size: 1.35rem; }
+      .connect-grid { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<div class="conf-badge">TRA 2026 · Transport Research Arena · Dublin, Ireland</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img
+      class="hero-photo"
+      src="https://research.universityofgalway.ie/files-asset/14685067/WhatsApp_Image_2024-04-23_at_20.06.30.jpeg?w=320&f=webp"
+      alt="Dr. Waqar Shahid Qureshi"
+      onerror="this.style.display='none'"
+    />
+    <div class="hero-body">
+      <p class="hero-name">Dr. Waqar Shahid Qureshi</p>
+      <p class="hero-role">Lecturer · School of Computer Science · University of Galway, Ireland</p>
+      <p class="hero-tagline">
+        Applied AI researcher in robotics, computer vision, and intelligent sensing — with 22+ years bridging academia, industry, and real-world deployment.
+      </p>
+      <div class="hero-meta">
+        <div>📧 <a href="mailto:waqarshahid.qureshi@universityofgalway.ie">waqarshahid.qureshi@universityofgalway.ie</a></div>
+        <div>🌍 <a href="https://paveanalytics.eu" target="_blank" rel="noopener">paveanalytics.eu</a> &nbsp;·&nbsp; Director &amp; Consultant</div>
+        <div>🤝 Accepting PhD student inquiries</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECT -->
+  <div class="connect">
+    <div class="section-label">Let's Connect</div>
+    <div class="connect-grid">
+      <a class="btn-linkedin"
+         href="https://www.linkedin.com/in/waqar-s-qureshi/"
+         target="_blank" rel="noopener">
+        <!-- LinkedIn icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.23 0z"/>
+        </svg>
+        Connect on LinkedIn
+      </a>
+
+      <div class="qr-wrap">
+        <canvas id="qr-canvas"></canvas>
+        <div class="qr-label">Scan to visit<br>this page</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="research">
+    <div class="section-label">Research Areas</div>
+    <div class="tags">
+      <span class="tag">Pavement Condition Assessment</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">Aerial Drones &amp; UAV</span>
+      <span class="tag">Robotics &amp; Automation</span>
+      <span class="tag">Edge AI &amp; Embedded Systems</span>
+      <span class="tag">Multimodal Sensing</span>
+      <span class="tag">Precision Agriculture</span>
+      <span class="tag">3D Reconstruction</span>
+      <span class="tag">Infrastructure Intelligence</span>
+      <span class="tag">Ordinal Classification</span>
+      <span class="tag">IMU / LiDAR Fusion</span>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="highlights">
+    <div class="section-label">At a Glance</div>
+    <div class="hl-grid">
+      <div>
+        <div class="hl-num">22+</div>
+        <div class="hl-text">Years of experience</div>
+      </div>
+      <div>
+        <div class="hl-num">100+</div>
+        <div class="hl-text">Publications</div>
+      </div>
+      <div>
+        <div class="hl-num">h&#8209;22</div>
+        <div class="hl-text">Scopus h-index</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE LINKS -->
+  <div class="links">
+    <div class="section-label">Profiles &amp; Work</div>
+    <div class="link-list">
+
+      <a class="link-row"
+         href="https://www.linkedin.com/in/waqar-s-qureshi/"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#e7f3fb;color:#0077b5;">in</div>
+        <div class="link-text">
+          <span class="link-title">LinkedIn</span>
+          <span class="link-sub">linkedin.com/in/waqar-s-qureshi</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://research.universityofgalway.ie/en/persons/waqar-shahid-qureshi/"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#f0fdf4;color:#15803d;">UG</div>
+        <div class="link-text">
+          <span class="link-title">University of Galway Research Profile</span>
+          <span class="link-sub">Publications, projects &amp; activities</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://www.scopus.com/authid/detail.uri?authorId=36806471400"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#fff7ed;color:#c2410c;">Sc</div>
+        <div class="link-text">
+          <span class="link-title">Scopus Author Profile</span>
+          <span class="link-sub">1,625 citations · h-index 22</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://orcid.org/0000-0003-0176-8145"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#f0fdf4;color:#166534;">OI</div>
+        <div class="link-text">
+          <span class="link-title">ORCID</span>
+          <span class="link-sub">0000-0003-0176-8145</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://www.paveanalytics.eu/"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#f5f3ff;color:#6d28d9;">PA</div>
+        <div class="link-text">
+          <span class="link-title">Pav-Analytics</span>
+          <span class="link-sub">AI pavement condition assessment for cycle routes &amp; greenways · EU OurTech · UG</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://waqarsqureshi.github.io/cshackathon/"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#fef9c3;color:#854d0e;">💻</div>
+        <div class="link-text">
+          <span class="link-title">Computing Hackathon 2026</span>
+          <span class="link-sub">CT101 · IoT &amp; Legacy Server challenge · 19 teams · UG School of CS</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Dr. Waqar Shahid Qureshi &nbsp;·&nbsp; University of Galway, Ireland</p>
+    <p>
+      <a href="mailto:waqarshahid.qureshi@universityofgalway.ie">waqarshahid.qureshi@universityofgalway.ie</a>
+    </p>
+  </footer>
+
+</div><!-- /container -->
+
+<script>
+  // Generate QR code pointing to this GitHub Pages URL
+  const siteUrl = 'https://waqarsqureshi.github.io';
+  QRCode.toCanvas(
+    document.getElementById('qr-canvas'),
+    siteUrl,
+    { width: 120, margin: 1, color: { dark: '#0f2240', light: '#ffffff' } },
+    function(err) { if (err) console.warn('QR:', err); }
+  );
+</script>
+
+</body>
+</html>
