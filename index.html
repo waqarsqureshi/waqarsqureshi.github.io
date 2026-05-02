@@ -3,27 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Waqar Shahid Qureshi — TRA 2026</title>
+  <title>Dr. Waqar Shahid Qureshi</title>
   <meta name="description" content="Researcher in AI, Computer Vision, Robotics & Infrastructure. Lecturer at University of Galway." />
 
   <!-- QR code library -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
+  <!-- UG brand fonts: Spectral (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --navy:   #0f2240;
-      --blue:   #2563eb;
-      --sky:    #eff6ff;
-      --slate:  #475569;
-      --border: #e2e8f0;
-      --white:  #ffffff;
+      --maroon:  #a80050;  /* Galway Maroon – Pantone 220 C */
+      --deep:    #84003d;  /* Galway Deep Maroon – Pantone 222 C */
+      --magenta: #e6007e;  /* Galway Magenta – Pantone 213 C */
+      --sky:     #fdf0f6;
+      --slate:   #475569;
+      --border:  #e2d6de;
+      --white:   #ffffff;
+      /* legacy aliases so nothing breaks */
+      --navy:    #84003d;
+      --blue:    #a80050;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-      background: #f8fafc;
+      font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: #fdf8fa;
       color: #1e293b;
       min-height: 100vh;
     }
@@ -31,7 +40,7 @@
     /* ── TOP ACCENT BAR ── */
     .accent-bar {
       height: 5px;
-      background: linear-gradient(90deg, #1e3a5f 0%, #2563eb 60%, #60a5fa 100%);
+      background: linear-gradient(90deg, #84003d 0%, #a80050 55%, #e6007e 100%);
     }
 
     /* ── CONFERENCE BADGE ── */
@@ -76,9 +85,10 @@
     }
 
     .hero-name {
+      font-family: 'Spectral', Georgia, serif;
       font-size: 1.45rem;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--deep);
       line-height: 1.2;
       margin-bottom: 4px;
     }
@@ -86,7 +96,7 @@
     .hero-role {
       font-size: 0.82rem;
       font-weight: 600;
-      color: var(--blue);
+      color: var(--maroon);
       margin-bottom: 10px;
     }
 
@@ -94,7 +104,7 @@
       font-size: 0.78rem;
       color: var(--slate);
       line-height: 1.5;
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--maroon);
       padding-left: 9px;
       margin-bottom: 12px;
     }
@@ -106,7 +116,7 @@
     }
 
     .hero-meta a {
-      color: var(--blue);
+      color: var(--maroon);
       text-decoration: none;
     }
 
@@ -121,13 +131,14 @@
     }
 
     .section-label {
+      font-family: 'Spectral', Georgia, serif;
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.1px;
-      color: var(--slate);
+      color: var(--deep);
       margin-bottom: 14px;
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--magenta);
       padding-left: 8px;
     }
 
@@ -196,8 +207,8 @@
 
     .tag {
       background: var(--sky);
-      border: 1px solid #bfdbfe;
-      color: var(--navy);
+      border: 1px solid #f0b8d4;
+      color: var(--deep);
       font-size: 0.74rem;
       font-weight: 500;
       padding: 4px 11px;
@@ -217,15 +228,16 @@
 
     .hl-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       text-align: center;
     }
 
     .hl-num {
+      font-family: 'Spectral', Georgia, serif;
       font-size: 1.7rem;
       font-weight: 700;
-      color: var(--navy);
+      color: var(--deep);
       line-height: 1;
       margin-bottom: 4px;
     }
@@ -266,7 +278,7 @@
     }
 
     .link-row:hover {
-      border-color: var(--blue);
+      border-color: var(--maroon);
       background: var(--sky);
     }
 
@@ -283,7 +295,7 @@
     }
 
     .link-text { flex: 1; }
-    .link-title { font-weight: 600; color: var(--navy); display: block; }
+    .link-title { font-weight: 600; color: var(--deep); display: block; }
     .link-sub   { font-size: 0.71rem; color: var(--slate); display: block; }
 
     .link-arrow { color: var(--slate); font-size: 0.85rem; }
@@ -297,13 +309,53 @@
       line-height: 1.6;
     }
 
-    footer a { color: var(--blue); text-decoration: none; }
+    footer a { color: var(--maroon); text-decoration: none; }
+
+    .visitor-counter {
+      margin-top: 10px;
+    }
+
+    /* ── COOKIE BANNER ── */
+    .cookie-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      color: #cbd5e1;
+      font-size: 0.74rem;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      z-index: 999;
+      text-align: center;
+    }
+
+    .cookie-bar a { color: #93c5fd; text-decoration: underline; }
+
+    .cookie-btn {
+      background: var(--magenta);
+      color: #fff;
+      border: none;
+      padding: 6px 18px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn:hover { background: #c4006b; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 460px) {
       .hero { flex-direction: column; align-items: center; text-align: center; }
       .hero-tagline { text-align: left; }
-      .hl-grid { grid-template-columns: repeat(2, 2fr); gap: 8px; }
+      .hl-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .hl-num { font-size: 1.35rem; }
       .connect-grid { justify-content: center; }
     }
@@ -312,8 +364,6 @@
 <body>
 
 <div class="accent-bar"></div>
-
-<div class="conf-badge">TRA 2026 · Transport Research Arena · Dublin, Ireland</div>
 
 <div class="container">
 
@@ -327,16 +377,16 @@
     />
     <div class="hero-body">
       <p class="hero-name">Dr. Waqar Shahid Qureshi</p>
-      <p class="hero-role">Lecturer · School of Computer Science · University of Galway, Ireland</p>
+      <p class="hero-role">Asst. Professor · School of Computer Science · University of Galway, Ireland</p>
       <p class="hero-tagline">
-        Applied AI researcher in robotics, computer vision, and intelligent sensing — with 22+ years bridging academia, industry, and real-world deployment.
+        Applied AI researcher in robotics, computer vision, and intelligent sensing — with 23+ years bridging academia, industry, and real-world deployment.
       </p>
       <div class="hero-meta">
-        <div>📧 <a href="mailto:waqarshahid.qureshi@universityofgalway.ie">waqarshahid.qureshi@universityofgalway.ie</a></div>
-        <div>🌍 <a href="https://paveanalytics.eu" target="_blank" rel="noopener">paveanalytics.eu</a> &nbsp;·&nbsp; Director &amp; Consultant</div>
-        <div>🤝 Accepting PhD student inquiries</div>
+        <div><a href="mailto:waqarshahid.qureshi@universityofgalway.ie">waqarshahid.qureshi@universityofgalway.ie</a></div>
+        <div>Independent Consultant</div>
+        <div>Accepting PhD student inquiries</div>
       </div>
-      <a href="cv.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:#0f2240;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:8px 16px;border-radius:7px;letter-spacing:0.2px;">📄 View Full CV &nbsp;↗</a>
+      <a href="cv.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:#84003d;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:8px 16px;border-radius:7px;letter-spacing:0.2px;">View Full CV &nbsp;↗</a>
     </div>
   </div>
 
@@ -382,23 +432,19 @@
 
   <!-- HIGHLIGHTS -->
   <div class="highlights">
-    <div class="section-label">At a Glance</div>
+    <div class="section-label">At a Glance · Google Scholar</div>
     <div class="hl-grid">
       <div>
-        <div class="hl-num">40</div>
-        <div class="hl-text">Journal Articles</div>
+        <div class="hl-num">2,207</div>
+        <div class="hl-text">Citations</div>
       </div>
       <div>
-        <div class="hl-num">28</div>
-        <div class="hl-text">Conference Publications</div>
+        <div class="hl-num">25</div>
+        <div class="hl-text">h-index</div>
       </div>
       <div>
-        <div class="hl-num">8</div>
-        <div class="hl-text">Patents</div>
-      </div>
-      <div>
-        <div class="hl-num">3</div>
-        <div class="hl-text">Book Chapters</div>
+        <div class="hl-num">36</div>
+        <div class="hl-text">i10-index</div>
       </div>
     </div>
   </div>
@@ -435,19 +481,8 @@
          target="_blank" rel="noopener">
         <div class="link-icon" style="background:#f0fdf4;color:#15803d;">UG</div>
         <div class="link-text">
-          <span class="link-title">University of Galway Research Profile</span>
+          <span class="link-title">Research Profile</span>
           <span class="link-sub">Publications, projects &amp; activities</span>
-        </div>
-        <span class="link-arrow">↗</span>
-      </a>
-
-      <a class="link-row"
-         href="https://www.scopus.com/authid/detail.uri?authorId=36806471400"
-         target="_blank" rel="noopener">
-        <div class="link-icon" style="background:#fff7ed;color:#c2410c;">Sc</div>
-        <div class="link-text">
-          <span class="link-title">Scopus Author Profile</span>
-          <span class="link-sub">1,625 citations · h-index 22</span>
         </div>
         <span class="link-arrow">↗</span>
       </a>
@@ -468,8 +503,19 @@
          target="_blank" rel="noopener">
         <div class="link-icon" style="background:#f5f3ff;color:#6d28d9;">PA</div>
         <div class="link-text">
-          <span class="link-title">Pav-Analytics</span>
-          <span class="link-sub">AI pavement condition assessment for cycle routes &amp; greenways · EU OurTech · UG</span>
+          <span class="link-title">PaveAnalytics</span>
+          <span class="link-sub">Co-Founder · AI pavement condition assessment for cycle routes &amp; greenways</span>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link-row"
+         href="https://robotiqs.com.pk/"
+         target="_blank" rel="noopener">
+        <div class="link-icon" style="background:#fdf2f8;color:#9d174d;">RQ</div>
+        <div class="link-text">
+          <span class="link-title">Robotiqs</span>
+          <span class="link-sub">Co-Founder · Robotics &amp; automation · robotiqs.com.pk</span>
         </div>
         <span class="link-arrow">↗</span>
       </a>
@@ -477,21 +523,10 @@
       <a class="link-row"
          href="https://waqarsqureshi.github.io/cshackathon/"
          target="_blank" rel="noopener">
-        <div class="link-icon" style="background:#fef9c3;color:#854d0e;">💻</div>
+        <div class="link-icon" style="background:#fef9c3;color:#854d0e;">CS</div>
         <div class="link-text">
-          <span class="link-title">Computing Hackathon 2026</span>
+          <span class="link-title">Hackathon</span>
           <span class="link-sub">CT101 · IoT &amp; Legacy Server challenge · 19 teams · UG School of CS</span>
-        </div>
-        <span class="link-arrow">↗</span>
-      </a>
-
-      <a class="link-row"
-         href="cv.html"
-         target="_blank" rel="noopener">
-        <div class="link-icon" style="background:#f0f9ff;color:#0369a1;">CV</div>
-        <div class="link-text">
-          <span class="link-title">Full Curriculum Vitae</span>
-          <span class="link-sub">Detailed academic &amp; professional CV</span>
         </div>
         <span class="link-arrow">↗</span>
       </a>
@@ -504,16 +539,34 @@
     <p>
       <a href="mailto:waqarshahid.qureshi@universityofgalway.ie">waqarshahid.qureshi@universityofgalway.ie</a>
     </p>
+    <div class="visitor-counter">
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwaqarsqureshi.github.io&count_bg=%230f2240&title_bg=%23475569&title=Visitors&edge_flat=true" alt="Visitor count" style="border-radius:4px;" />
+    </div>
   </footer>
+
+  <!-- COOKIE CONSENT -->
+  <div class="cookie-bar" id="cookie-bar">
+    <span>This site uses third-party scripts (QR code &amp; visitor counter) that may set cookies. By continuing to use this page you accept their use. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+    <button class="cookie-btn" onclick="acceptCookies()">OK, got it</button>
+  </div>
 
 </div><!-- /container -->
 
 <script>
+  // Cookie consent
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', '1');
+    document.getElementById('cookie-bar').style.display = 'none';
+  }
+  if (localStorage.getItem('cookieConsent') === '1') {
+    document.getElementById('cookie-bar').style.display = 'none';
+  }
+
   new QRCode(document.getElementById('qr-div'), {
     text: 'https://waqarsqureshi.github.io',
     width: 120,
     height: 120,
-    colorDark: '#0f2240',
+    colorDark: '#84003d',
     colorLight: '#ffffff',
     correctLevel: QRCode.CorrectLevel.M
   });
